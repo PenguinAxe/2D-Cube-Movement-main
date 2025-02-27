@@ -14,12 +14,14 @@ public class PickUpScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void OnTriggerStay2D(Collider2D collision)
-        {
-        if (collision.gameObject.CompareTag("Object"))
-        {   
-            pickable=true;
-        }
-        }
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+    Debug.Log("rg");
+    if (collision.gameObject.CompareTag("Object"))
+    {   
+         pickable=true;
+    }
     }
 }
