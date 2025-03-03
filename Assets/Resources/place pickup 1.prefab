@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7382646863002653494}
   - component: {fileID: 282081035863278169}
   - component: {fileID: 7044066546605954910}
-  - component: {fileID: 8776188130317193778}
+  - component: {fileID: -316441795288415580}
+  - component: {fileID: -3423171855968895087}
   m_Layer: 0
-  m_Name: pickup 2 placeable
+  m_Name: place pickup 1
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5987448934071985256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.88, y: 10.124, z: 0}
-  m_LocalScale: {x: 1.86, y: 0.1169, z: 1}
+  m_LocalPosition: {x: -2.666, y: 10.124, z: 0}
+  m_LocalScale: {x: 0.4672, y: 0.1169, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -177,7 +178,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
---- !u!50 &8776188130317193778
+--- !u!114 &-316441795288415580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987448934071985256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1502eecf714d9744a37732344a032a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+--- !u!50 &-3423171855968895087
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -192,7 +206,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -203,4 +217,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
