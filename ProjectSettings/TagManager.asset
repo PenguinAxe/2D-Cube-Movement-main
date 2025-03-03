@@ -8,6 +8,7 @@ TagManager:
   - Die
   - Enemy
   - Object
+  - pickables
   layers:
   - Default
   - TransparentFX
