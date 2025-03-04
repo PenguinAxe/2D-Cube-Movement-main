@@ -20,7 +20,6 @@ public class PlayerShooting : MonoBehaviour
         RotatePickupTrigger();
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
         }
     }
     void RotateBulletSpawnPointTowardsMouse()

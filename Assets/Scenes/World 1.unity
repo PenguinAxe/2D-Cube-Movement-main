@@ -7721,6 +7721,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1467668384}
     m_Modifications:
+    - target: {fileID: -3423171855968895087, guid: bb2137e40ac6b7f44b071463a5a3e7a3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5987448934071985256, guid: bb2137e40ac6b7f44b071463a5a3e7a3, type: 3}
       propertyPath: m_Name
       value: testbox1
@@ -8456,6 +8460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1273307265997980101, guid: 76d81d6a12f9b4279b50e3c23f56c92c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1649811144, guid: 470895b57e04f43a59a50acbb6c21008, type: 3}
     - target: {fileID: 2495240428126803460, guid: 76d81d6a12f9b4279b50e3c23f56c92c, type: 3}
       propertyPath: triggersRotation
       value: 
