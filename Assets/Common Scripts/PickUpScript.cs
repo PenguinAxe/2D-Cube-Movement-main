@@ -18,7 +18,7 @@ public class PickUpScript : MonoBehaviour
     public bool itemheld; //are you holding anything?
     public float objectspeed = 5f; // how fast it moves
     public int objectweight= 50; //will be added later into damage and speed equations so its balanced - could be too much work so might be cut
-    public int damage; // the amount of damage it does when hitting an enemy
+    public int damage;// the amount of damage it does when hitting an enemy
     public int shooty; // (sorry for bad naming) - allows you to pick up an item first without immidiatly throwing it
     public bool checkshooty;
     //all below are throwables
@@ -29,9 +29,10 @@ public class PickUpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = 5 * objectweight;
+        
         shooty=0;
         removeplace=("place ");
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

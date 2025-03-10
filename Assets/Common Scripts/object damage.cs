@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class objectdamage : MonoBehaviour
 { 
+    public GameObject enemy;
     public int damage;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public int weight;
+    public int total;
+    public int objecthealth;
+    void Start()
+    {
+        total = damage * weight;
+        objecthealth = total*2;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {   
-            collision.GetComponent<Health>().TakeDamage(damage) ;
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
+            collision.GetComponent<Health>().TakeDamage(total);
+            objecthealth=objecthealth-total;
             Debug.Log("Enemy " + "took " + damage + " damage");
-            Destroy(gameObject);
+
+            if (objecthealth<0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
