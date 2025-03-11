@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     {
         Flash.SetActive(false);
     }
-    public int Playerdamage = 2;
+    public int Playerdamage = 20;
     public GameObject Flash;
     private void OnTriggerEnter2D(Collider2D collision)
     {

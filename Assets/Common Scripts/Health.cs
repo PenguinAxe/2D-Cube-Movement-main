@@ -22,10 +22,10 @@ public class Health : MonoBehaviour
         Currenthealth -= damage;
         if (Currenthealth <=0 )
         {
-            Die();//die
+            Die1();//die
         }
     }
-    void Die()
+    void Die1()
     {
         Debug.Log(gameObject.name + " was destroyed");
         Destroy(gameObject);

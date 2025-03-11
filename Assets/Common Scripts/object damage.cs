@@ -20,7 +20,7 @@ public class objectdamage : MonoBehaviour
         {   
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
             collision.GetComponent<Health>().TakeDamage(total);
-            objecthealth=objecthealth-total;
+            objecthealth=objecthealth-damage;
             Debug.Log("Enemy " + "took " + damage + " damage");
 
             if (objecthealth<0)

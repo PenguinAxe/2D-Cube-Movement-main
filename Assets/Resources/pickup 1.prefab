@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1502eecf714d9744a37732344a032a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 2865389045187418337, guid: be78a33c290b340e096a57531ef092d2, type: 3}
   damage: 2
   weight: 5
   total: 0

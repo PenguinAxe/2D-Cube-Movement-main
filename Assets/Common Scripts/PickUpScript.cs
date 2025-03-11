@@ -42,7 +42,6 @@ public class PickUpScript : MonoBehaviour
          pickable=true;
         placepickeditem = collision.gameObject.name;
         kill=GameObject.Find(placepickeditem);
-        Debug.Log(placepickeditem);
         
     }
     }   

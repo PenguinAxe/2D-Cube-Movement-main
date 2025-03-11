@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public int PlayerMaxhealth;
     int PlayerCurrenthealth;
     public HudManagerScript HUD;
+    public GameOver GameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +24,8 @@ public class PlayerHealth : MonoBehaviour
             Die();//die
         }
     }
-    void Die()
+    public void Die()
     {
-        Debug.Log(gameObject.name + " was destroyed");
-        Destroy(gameObject);
+        GameOver.GameOve();
     }
 }
