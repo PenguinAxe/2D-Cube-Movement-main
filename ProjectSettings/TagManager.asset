@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Object
   - pickables
+  - wall
   layers:
   - Default
   - TransparentFX

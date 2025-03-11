@@ -16,11 +16,11 @@ public class PickUpScript : MonoBehaviour
     public GameObject kill; //used to destroy the placed versions of the projectiles
     public GameObject triggerdisable; //disables the trigger which detects if you can or cant pick up an object - caused a bug where you were holding something different then what was thrown
     public bool itemheld; //are you holding anything?
-    public float objectspeed = 5f; // how fast it moves
-    public int objectweight= 50; //will be added later into damage and speed equations so its balanced - could be too much work so might be cut
+    public int objectspeed; // how fast it moves
     public int damage;// the amount of damage it does when hitting an enemy
     public int shooty; // (sorry for bad naming) - allows you to pick up an item first without immidiatly throwing it
-    public bool checkshooty;
+    public int objweight;
+
     //all below are throwables
     public GameObject hexagon;//crosshair
     public GameObject testbox1;
@@ -29,9 +29,9 @@ public class PickUpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         shooty=0;
         removeplace=("place ");
+
         
     }
 
@@ -52,7 +52,6 @@ public class PickUpScript : MonoBehaviour
     void Update()
     {
         pickeditem= placepickeditem.Replace(removeplace, "");
-        Debug.Log(pickeditem);
         if (Input.GetButtonDown("Fire1") && itemheld==true)
         {
             shooty = shooty + 1;
@@ -77,9 +76,12 @@ public class PickUpScript : MonoBehaviour
         {
             GameObject pickedup = (GameObject)Instantiate(Resources.Load(pickeditem),bulletSpawnPoint.position, firePointRotation.rotation);
              Rigidbody2D rb = pickedup.GetComponent<Rigidbody2D>();
+             pickedup.GetComponent<objectdamage>().damage = objectspeed;
             rb.velocity = firePointRotation.right * objectspeed;
             pickedup.GetComponent<objectdamage>().damage = damage;
+            Debug.Log(pickedup.GetComponent<objectdamage>().damage);
             itemheld = false;
+            Debug.Log(pickedup);
             pickedup = (null);
             pickeditem= (null);
             hexagon.SetActive(true);
