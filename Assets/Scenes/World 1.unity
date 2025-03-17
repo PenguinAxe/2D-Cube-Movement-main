@@ -6761,6 +6761,7 @@ MonoBehaviour:
   damage: 0
   shooty: 0
   objweight: 0
+  speed: 0
   hexagon: {fileID: 789724899}
   testbox1: {fileID: 444068039}
   testbox2: {fileID: 1528806745}
@@ -7285,7 +7286,7 @@ GameObject:
   - component: {fileID: 1844444600}
   m_Layer: 0
   m_Name: ForeGround
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

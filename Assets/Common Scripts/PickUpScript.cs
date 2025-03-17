@@ -20,6 +20,7 @@ public class PickUpScript : MonoBehaviour
     public int damage;// the amount of damage it does when hitting an enemy
     public int shooty; // (sorry for bad naming) - allows you to pick up an item first without immidiatly throwing it
     public int objweight;
+    public int speed;
 
     //all below are throwables
     public GameObject hexagon;//crosshair
@@ -30,6 +31,7 @@ public class PickUpScript : MonoBehaviour
     void Start()
     {
         shooty=0;
+        speed=25;
         removeplace=("place ");
 
         
@@ -39,6 +41,7 @@ public class PickUpScript : MonoBehaviour
     {
     if (collision.gameObject.CompareTag("Object"))
     {   
+        
          pickable=true;
         placepickeditem = collision.gameObject.name;
         kill=GameObject.Find(placepickeditem);
@@ -76,10 +79,9 @@ public class PickUpScript : MonoBehaviour
         {
             GameObject pickedup = (GameObject)Instantiate(Resources.Load(pickeditem),bulletSpawnPoint.position, firePointRotation.rotation);
              Rigidbody2D rb = pickedup.GetComponent<Rigidbody2D>();
-             pickedup.GetComponent<objectdamage>().damage = objectspeed;
+            objectspeed=speed-pickedup.GetComponent<objectdamage>().total;
             rb.velocity = firePointRotation.right * objectspeed;
             pickedup.GetComponent<objectdamage>().damage = damage;
-            Debug.Log(pickedup.GetComponent<objectdamage>().damage);
             itemheld = false;
             Debug.Log(pickedup);
             pickedup = (null);

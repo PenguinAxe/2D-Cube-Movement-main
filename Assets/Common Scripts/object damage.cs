@@ -14,6 +14,13 @@ public class objectdamage : MonoBehaviour
         total = damage * weight;
         objecthealth = total*2;
     }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("wall"))
+        {
+            
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -21,12 +28,13 @@ public class objectdamage : MonoBehaviour
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
             collision.GetComponent<Health>().TakeDamage(total);
             objecthealth=objecthealth-damage;
-            Debug.Log("Enemy " + "took " + damage + " damage");
+            Debug.Log("Enemy " + "took " + total + " damage");
 
             if (objecthealth<0)
             {
                 Destroy(gameObject);
             }
         }
+        
     }
 }
