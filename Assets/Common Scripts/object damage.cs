@@ -9,6 +9,8 @@ public class objectdamage : MonoBehaviour
     public int weight;
     public int total;
     public int objecthealth;
+    public GameObject brokenbits;
+
     void Start()
     {
         total = damage * weight;
@@ -18,7 +20,7 @@ public class objectdamage : MonoBehaviour
     {
         if (col.gameObject.CompareTag("wall"))
         {
-            
+						BreakIt();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -37,4 +39,17 @@ public class objectdamage : MonoBehaviour
         }
         
     }
+    public void BreakIt()
+	{
+		Destroy (this.gameObject);
+		 GameObject broke = (GameObject)    Instantiate (brokenbits, transform.position, Quaternion.identity);
+
+		foreach (Transform child in broke.transform) {
+
+
+			child.GetComponent<Rigidbody2D>().velocity= new Vector2(Random.Range(-0.5f,1f),Random.Range(-1f,1.5f));
+				}
+
+
+	}
 }

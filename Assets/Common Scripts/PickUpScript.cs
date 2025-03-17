@@ -31,7 +31,7 @@ public class PickUpScript : MonoBehaviour
     void Start()
     {
         shooty=0;
-        speed=25;
+        speed=100;
         removeplace=("place ");
 
         
@@ -79,7 +79,7 @@ public class PickUpScript : MonoBehaviour
         {
             GameObject pickedup = (GameObject)Instantiate(Resources.Load(pickeditem),bulletSpawnPoint.position, firePointRotation.rotation);
              Rigidbody2D rb = pickedup.GetComponent<Rigidbody2D>();
-            objectspeed=speed-pickedup.GetComponent<objectdamage>().total;
+            objectspeed=speed-pickedup.GetComponent<objectdamage>().weight;
             rb.velocity = firePointRotation.right * objectspeed;
             pickedup.GetComponent<objectdamage>().damage = damage;
             itemheld = false;
