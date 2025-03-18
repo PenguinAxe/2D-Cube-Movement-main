@@ -43,7 +43,7 @@ public class objectdamage : MonoBehaviour
     public void BreakIt()
 	{
 		Destroy (this.gameObject);
-		 GameObject broke = (GameObject)    Instantiate (brokenbits, transform.position, firePointRotation1.rotation);
+		 GameObject broke = (GameObject)    Instantiate (brokenbits, transform.position, transform.rotation);
 
 		foreach (Transform child in broke.transform) {
 

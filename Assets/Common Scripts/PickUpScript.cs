@@ -8,9 +8,11 @@ public class PickUpScript : MonoBehaviour
 {
     public bool pickable = false; //can pick up this item
     public GameObject pickedup; //what was picked up
-    public string placepickeditem; //used to have 2 different objects and then when you click again it spawns a different object depending on name meaning you dont have to assign it
+    public string placepickeditem1;
+    public string placepickeditem2; //used to have 2 different objects and then when you click again it spawns a different object depending on name meaning you dont have to assign it
     public string pickeditem; //new game object of pickedup which is used to instantiate the projectile version
-    public string removeplace; // removes place from the start of placeable objects so they can be instantiated
+    public string removeplace;
+    public string removeend; // removes place from the start of placeable objects so they can be instantiated
     public Transform firePointRotation; //firepoint rotation from bullet script
     public Transform bulletSpawnPoint; //spawnpoint from bullet script
     public GameObject kill; //used to destroy the placed versions of the projectiles
@@ -43,8 +45,17 @@ public class PickUpScript : MonoBehaviour
     {   
         
          pickable=true;
-        placepickeditem = collision.gameObject.name;
-        kill=GameObject.Find(placepickeditem);
+        placepickeditem1 = collision.gameObject.name;
+        if(placepickeditem1.Length>14)
+        {
+            kill=GameObject.Find(placepickeditem1);
+            placepickeditem2 = placepickeditem1.Remove(placepickeditem1.Length - 4);
+        }
+        else
+        {
+            kill=GameObject.Find(placepickeditem1);
+        }
+        
         
     }
     }   
@@ -54,7 +65,15 @@ public class PickUpScript : MonoBehaviour
     }
     void Update()
     {
-        pickeditem= placepickeditem.Replace(removeplace, "");
+        if(placepickeditem1.Length>14)
+        {
+            pickeditem= placepickeditem2.Replace(removeplace, "");
+        }
+        else
+        {
+            pickeditem= placepickeditem1.Replace(removeplace, "");
+        }
+        Debug.Log(pickeditem);
         if (Input.GetButtonDown("Fire1") && itemheld==true)
         {
             shooty = shooty + 1;

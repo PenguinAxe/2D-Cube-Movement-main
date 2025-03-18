@@ -149,6 +149,7 @@ MonoBehaviour:
   weight: 80
   total: 0
   objecthealth: 0
+  firePointRotation1: {fileID: 8219436535494601016}
   brokenbits: {fileID: 6807590972558146748, guid: 91cdbe984933288499139d8f9d681d23, type: 3}
 --- !u!50 &-3423171855968895087
 Rigidbody2D:
