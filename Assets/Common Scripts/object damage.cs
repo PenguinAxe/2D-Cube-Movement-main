@@ -9,6 +9,7 @@ public class objectdamage : MonoBehaviour
     public int weight;
     public int total;
     public int objecthealth;
+    public Transform firePointRotation1;
     public GameObject brokenbits;
 
     void Start()
@@ -42,7 +43,7 @@ public class objectdamage : MonoBehaviour
     public void BreakIt()
 	{
 		Destroy (this.gameObject);
-		 GameObject broke = (GameObject)    Instantiate (brokenbits, transform.position, Quaternion.identity);
+		 GameObject broke = (GameObject)    Instantiate (brokenbits, transform.position, firePointRotation1.rotation);
 
 		foreach (Transform child in broke.transform) {
 
