@@ -14,9 +14,8 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {   
-            collision.GetComponent<PlayerHealth>().PlayerTakeDamage(Playerdamage) ;
-            Debug.Log("Player " + "took " + Playerdamage + " damage");
-            Flash.SetActive(true);
+        collision.GetComponent<PlayerHealth>().PlayerTakeDamage(Playerdamage);
+        Debug.Log("Player " + "took " + Playerdamage + " damage");
         }
     }
 }

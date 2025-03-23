@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 282081035863278169}
   - component: {fileID: -4942666321739708626}
   - component: {fileID: 1443601565315038239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pickup 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,3 +176,5 @@ MonoBehaviour:
   weight: 25
   total: 0
   objecthealth: 0
+  firePointRotation1: {fileID: 0}
+  brokenbits: {fileID: 0}

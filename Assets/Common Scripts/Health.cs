@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
     public int Maxhealth;
-    int Currenthealth;
+    public bool death;
+    Animator animator;
+    
+    public int Currenthealth;
+    GameObject navmesh;
     // Start is called before the first frame update
     private void Start()
     {
+        animator = GetComponent<Animator>();
         Currenthealth = Maxhealth;
+        gameObject.GetComponent<NavMeshAgent>().enabled = true;
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        
     }
 
     // Update is called once per frame
@@ -17,17 +26,28 @@ public class Health : MonoBehaviour
     {
         Currenthealth -= HealAmount;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int total)
     {
-        Currenthealth -= damage;
+        Currenthealth -= total;
+    }
+    private void Update()
+    {
         if (Currenthealth <=0 )
         {
+            animator.SetBool("death", true);
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             Die1();//die
         }
     }
     void Die1()
     {
-        Debug.Log(gameObject.name + " was destroyed");
+    StartCoroutine(ExampleCoroutine());
+    IEnumerator ExampleCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
+    }
     }
 }

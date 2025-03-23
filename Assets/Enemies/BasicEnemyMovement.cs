@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class BasicEnemyMovement : MonoBehaviour
@@ -19,6 +20,9 @@ public class BasicEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        if (gameObject.GetComponent<Health>().Currenthealth >0)
+        {
+            agent.SetDestination(player.transform.position);
+        }
     }
 }

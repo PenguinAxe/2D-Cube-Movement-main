@@ -14,8 +14,9 @@ public class objectdamage : MonoBehaviour
 
     void Start()
     {
-        total = damage * weight;
-        objecthealth = total*2;
+        damage = 5;
+        total = weight/damage;
+        objecthealth = total;
     }
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -28,14 +29,14 @@ public class objectdamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {   
-            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), enemy.GetComponent<CircleCollider2D>());
             collision.GetComponent<Health>().TakeDamage(total);
             objecthealth=objecthealth-damage;
             Debug.Log("Enemy " + "took " + total + " damage");
 
             if (objecthealth<0)
             {
-                Destroy(gameObject);
+                BreakIt();
             }
         }
         

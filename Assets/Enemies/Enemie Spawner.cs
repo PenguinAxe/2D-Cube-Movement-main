@@ -6,14 +6,15 @@ public class EnemieSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public Transform spawnPoint;
-
+    public int amount;
     float spawnInterval = 2f;
-    float minimumSpawnInterval = 0.1f;
-    float intervalDecrease = 0.1f;
+    float minimumSpawnInterval = 1f;
+    float intervalDecrease = 0.25f;
     // Start is called before the first frame update
     private void Start()
     {
         StartCoroutine(SpawnEnemies());
+        amount = 0;
     }
 
 
@@ -22,9 +23,11 @@ public class EnemieSpawner : MonoBehaviour
 
         while (true)
         {
-            if (objectToSpawn != null && spawnPoint != null)
+            if (objectToSpawn != null && spawnPoint != null && amount <=1)
             {
                 Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+                amount = amount+1;
+                Debug.Log(amount);
             }
             else 
             {

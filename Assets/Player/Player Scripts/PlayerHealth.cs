@@ -6,11 +6,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public int PlayerMaxhealth;
     int PlayerCurrenthealth;
+    bool stop;
     public HudManagerScript HUD;
     public GameOver GameOver;
     // Start is called before the first frame update
     void Start()
     {
+        stop=false;
         PlayerCurrenthealth = PlayerMaxhealth;
         HUD.updatehealthbar(PlayerCurrenthealth);
     }
