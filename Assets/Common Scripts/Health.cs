@@ -8,12 +8,15 @@ public class Health : MonoBehaviour
     public int Maxhealth;
     public bool death;
     Animator animator;
+    public GameObject 
+    static public int amount;
     
     public int Currenthealth;
-    GameObject navmesh;
+
     // Start is called before the first frame update
     private void Start()
     {
+        amount=0;
         animator = GetComponent<Animator>();
         Currenthealth = Maxhealth;
         gameObject.GetComponent<NavMeshAgent>().enabled = true;
@@ -40,11 +43,13 @@ public class Health : MonoBehaviour
             Die1();//die
         }
     }
-    void Die1()
+    public void Die1()
     {
+    amount = amount+1;
     StartCoroutine(ExampleCoroutine());
     IEnumerator ExampleCoroutine()
     {
+        amount = amount+1;
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }

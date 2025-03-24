@@ -20,10 +20,10 @@ public class EnemieSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-
+        yield return new WaitForSeconds(5);
         while (true)
         {
-            if (objectToSpawn != null && spawnPoint != null && amount <=1)
+            if (objectToSpawn != null && spawnPoint != null && amount <=2)
             {
                 Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
                 amount = amount+1;
