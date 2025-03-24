@@ -9,6 +9,7 @@ public class objectdamage : MonoBehaviour
     public int weight;
     public int total;
     public int objecthealth;
+
     public Transform firePointRotation1;
     public GameObject brokenbits;
 

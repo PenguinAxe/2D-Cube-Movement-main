@@ -37,7 +37,6 @@ public class Health : MonoBehaviour
             animator.SetBool("death", true);
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
-            gameObject.GetComponent<Collider2D>().enabled = false;
             Die1();//die
         }
     }
