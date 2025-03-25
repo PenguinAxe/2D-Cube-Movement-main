@@ -26,12 +26,12 @@ public class RigidbodyMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire3"))
         {
-            moveSpeed = 25f;
+            moveSpeed = 6f;
         }
 
         if (Input.GetButtonUp("Fire3"))
         {
-            moveSpeed = 10f;
+            moveSpeed = 5f;
         }
 
         float moveInputX = Input.GetAxisRaw("Horizontal"); // For horizontal movement (left/right)

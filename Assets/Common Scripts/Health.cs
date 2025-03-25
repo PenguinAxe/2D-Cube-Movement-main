@@ -8,14 +8,14 @@ public class Health : MonoBehaviour
     public int Maxhealth;
     public bool death;
     Animator animator;
-    public GameObject 
-    static public int amount;
+    public static int amount;
     
     public int Currenthealth;
 
     // Start is called before the first frame update
     private void Start()
     {
+        amount = 0;
         animator = GetComponent<Animator>();
         Currenthealth = Maxhealth;
         gameObject.GetComponent<NavMeshAgent>().enabled = true;
