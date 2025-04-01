@@ -3251,6 +3251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Low taper Fade
       objectReference: {fileID: 0}
+    - target: {fileID: 2047159980124421883, guid: bfa459799a746468990d12871d533ff5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844844332284137250, guid: bfa459799a746468990d12871d533ff5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
